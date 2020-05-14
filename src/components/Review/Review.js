@@ -20,15 +20,17 @@ const Review = (props) => {
   }, [])
 
   const destroy = () => {
-    axios({
-      url: `${apiUrl}/reviews/${props.match.params.id}`,
-      method: 'DELETE',
-      headers: {
-        'Authorization': `Token token=${user.token}`
-      }
-    })
-      .then(() => setDeleted(true))
-      .catch(console.error)
+    if (user) {
+      axios({
+        url: `${apiUrl}/reviews/${props.match.params.id}`,
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Token token=${user.token}`
+        }
+      })
+        .then(() => setDeleted(true))
+        .catch(console.error)
+    }
   }
 
   if (!review) {
@@ -48,18 +50,15 @@ const Review = (props) => {
       <h5>Rating: {review.rating}</h5>
       <h6>Move In: {review.movein}</h6> <h6>Move Out: {review.moveout}</h6>
       <p>Description: {review.description}</p>
-      <button onClick={destroy}>Delete Book</button>
-      <Link to={`/reviews/${props.match.params.id}/edit`}>
-        <button>Edit</button>
-      </Link>
       <Link to="/view-reviews">Back to reviews</Link>
     </Layout>
   )
 
-  if (user === review.user.id) {
-    console.log('this is the logged in user' + user)
-    console.log('this is the created user' + review.user.id)
+  if (user === null) {
+    return editDeleteJsx
+  }
 
+  if (user.id !== review.user.id) {
     return editDeleteJsx
   }
 

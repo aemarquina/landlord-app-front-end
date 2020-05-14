@@ -12,7 +12,7 @@ import ReviewCreate from '../ReviewCreate/ReviewCreate'
 import Reviews from '../Reviews/Reviews'
 import Review from '../Review/Review'
 import ReviewEdit from '../ReviewEdit/ReviewEdit'
-
+// import UnauthReview from '../UnauthReview/UnauthReview'
 // import { router } from 'sw-toolbox';
 
 class App extends Component {
@@ -69,7 +69,7 @@ class App extends Component {
           <Route path='/reviews/:id' user={user} render={({ match }) => (
             <Review msgAlert={this.msgAlert} user={user} match={match} />
           )} />
-          <Route path='/reviews/:id/edit' user={user} render={({ match }) => (
+          <AuthenticatedRoute path='/reviews/:id/edit' user={user} render={({ match }) => (
             <ReviewEdit msgAlert={this.msgAlert} user={user} match={match} />
           )} />
         </main>

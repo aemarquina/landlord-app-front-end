@@ -4,7 +4,7 @@ import axios from 'axios'
 
 import apiUrl from '../../apiConfig'
 import ReviewForm from '../../shared/ReviewForm'
-import Layout from '../../shared/Layout'
+// import Layout from '../../shared/Layout'
 
 const ReviewEdit = (props) => {
   const [review, setReview] = useState({
@@ -37,34 +37,29 @@ const ReviewEdit = (props) => {
 
   const handleSubmit = event => {
     event.preventDefault()
-
-    if (user) {
-      axios({
-        url: `${apiUrl}/reviews/${props.match.params.id}`,
-        method: 'PATCH',
-        headers: {
-          'Authorization': `Token token=${user.token}`
-        },
-        data: { review }
-      })
-        .then(() => setUpdated(true))
-        .catch(console.error)
-    }
+    axios({
+      url: `${apiUrl}/reviews/${props.match.params.id}`,
+      method: 'PATCH',
+      headers: {
+        'Authorization': `Token token=${user.token}`
+      },
+      data: { review }
+    })
+      .then(() => setUpdated(true))
+      .catch(console.error)
   }
 
   if (updated) {
-    return <Redirect to={`/reviews/${props.match.params.id}`} />
+    return <Redirect to={`/view-reviews/${props.match.params.id}`} />
   }
 
   return (
-    <Layout>
-      <ReviewForm
-        review={review}
-        handleChange={handleChange}
-        handleSubmit={handleSubmit}
-        cancelPath={`/view-reviews/${props.match.params.id}`}
-      />
-    </Layout>
+    <ReviewForm
+      review={review}
+      handleChange={handleChange}
+      handleSubmit={handleSubmit}
+      cancelPath={`/reviews/${props.match.params.id}`}
+    />
   )
 }
 
