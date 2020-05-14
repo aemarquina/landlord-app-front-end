@@ -17,12 +17,17 @@ const ReviewEdit = (props) => {
   })
   const [updated, setUpdated] = useState(false)
 
-  const { user } = props
+  const { user, msgAlert } = props
 
   useEffect(() => {
     axios(`${apiUrl}/reviews/${props.match.params.id}`)
       .then(res => setReview(res.data.review))
-      .catch(console.error)
+      .catch(error => {
+        msgAlert({
+          heading: 'Unable to view reviews: ' + error.message,
+          variant: 'danger'
+        })
+      })
   }, [])
 
   const handleChange = event => {
@@ -46,7 +51,16 @@ const ReviewEdit = (props) => {
       data: { review }
     })
       .then(() => setUpdated(true))
-      .catch(console.error)
+      .then(() => msgAlert({
+        heading: 'Edited Review',
+        variant: 'success'
+      }))
+      .catch(error => {
+        msgAlert({
+          heading: 'Unable to edit reviews: ' + error.message,
+          variant: 'danger'
+        })
+      })
   }
 
   if (updated) {

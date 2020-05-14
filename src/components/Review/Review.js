@@ -9,14 +9,19 @@ const Review = (props) => {
   const [review, setReview] = useState(null)
   const [deleted, setDeleted] = useState(false)
 
-  const { user } = props
+  const { user, msgAlert } = props
 
   useEffect(() => {
     // console.log('this is the logged in user' + user)
     // console.log('this is the created user' + review.user.id)
     axios(`${apiUrl}/reviews/${props.match.params.id}`)
       .then(res => setReview(res.data.review))
-      .catch(console.error)
+      .catch(error => {
+        msgAlert({
+          heading: 'Unable to retrieve review: ' + error.message,
+          variant: 'danger'
+        })
+      })
   }, [])
 
   const destroy = () => {
@@ -29,7 +34,17 @@ const Review = (props) => {
         }
       })
         .then(() => setDeleted(true))
-        .catch(console.error)
+        .then(() => msgAlert({
+          heading: 'deleted Review',
+          variant: 'success'
+        }))
+        .catch(error => {
+          this.setState({ email: '', password: '' })
+          msgAlert({
+            heading: 'Unable to delete review: ' + error.message,
+            variant: 'danger'
+          })
+        })
     }
   }
 

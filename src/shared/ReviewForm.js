@@ -8,7 +8,7 @@ const ReviewForm = ({ review, handleSubmit, handleChange, cancelPath }) => (
       <Form.Label>Property Address</Form.Label>
       <Form.Control
         placeholder="Address"
-        value={review.property || ' '}
+        value={review.property}
         name="property"
         onChange={handleChange}
       />
@@ -17,7 +17,7 @@ const ReviewForm = ({ review, handleSubmit, handleChange, cancelPath }) => (
       <Form.Label>Rating</Form.Label>
       <Form.Control
         placeholder="Value of 1-5"
-        value={review.rating || ' '}
+        value={review.rating}
         name="rating"
         onChange={handleChange}
       />
@@ -27,17 +27,17 @@ const ReviewForm = ({ review, handleSubmit, handleChange, cancelPath }) => (
       <Form.Label>Landlord</Form.Label>
       <Form.Control
         placeholder="Landlord's Name"
-        value={review.landlord || ' '}
+        value={review.landlord}
         name="landlord"
         onChange={handleChange}
       />
     </Form.Group>
 
-    <Form.Group controlId="formHorizontal">
+    <Form.Group>
       <Form.Label>Move-In</Form.Label>
-      <Form.Control className="datepicker"
+      <Form.Control type='date'
         placeholder="Date you Moved in"
-        value={review.movein || ' '}
+        value={review.movein}
         name="movein"
         onChange={handleChange}
       />
@@ -45,7 +45,7 @@ const ReviewForm = ({ review, handleSubmit, handleChange, cancelPath }) => (
 
     <Form.Group controlId="formHorizontal">
       <Form.Label>Move-Out</Form.Label>
-      <Form.Control
+      <Form.Control type='date'
         placeholder="Date you Moved Out"
         value={review.moveout}
         name="moveout"
@@ -57,7 +57,7 @@ const ReviewForm = ({ review, handleSubmit, handleChange, cancelPath }) => (
       <Form.Label>Description</Form.Label>
       <Form.Control
         placeholder="Please tell us about your experience"
-        value={review.description || ' '}
+        value={review.description}
         name="description"
         onChange={handleChange}
       />

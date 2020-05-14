@@ -16,7 +16,7 @@ const ReviewCreate = (props) => {
   })
   const [createdReviewId, setCreatedReviewId] = useState(null)
 
-  const { user } = props
+  const { user, msgAlert } = props
 
   const handleChange = event => {
     event.persist()
@@ -28,7 +28,12 @@ const ReviewCreate = (props) => {
 
     reviewCreate(review, user)
       .then(res => setCreatedReviewId(res.data.review.id))
-      .catch(console.error)
+      .catch(error => {
+        msgAlert({
+          heading: 'Unable to create review: ' + error.message,
+          variant: 'danger'
+        })
+      })
   }
   if (createdReviewId) {
     return <Redirect to={`/reviews/${createdReviewId}`} />

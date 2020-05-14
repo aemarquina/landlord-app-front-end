@@ -3,20 +3,31 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import Layout from '../../shared/Layout'
+import Card from 'react-bootstrap/Card'
 
 import './Review.scss'
 
-const Reviews = () => {
+const Reviews = (prop) => {
   const [reviews, setReviews] = useState([])
+
+  const { msgAlert } = prop
   useEffect(() => {
     axios(`${apiUrl}/reviews`)
       .then(res => setReviews(res.data.reviews))
-      .catch(console.error)
+      .catch(error => {
+        msgAlert({
+          heading: 'Unable to retrieve reviews: ' + error.message,
+          variant: 'danger'
+        })
+      })
   }, [])
   const reviewsJsx = reviews.map(review => (
     <div className='reviewBox' key={review.id}>
-      <Link to={`/reviews/${review.id}`}>{review.property} <br></br></Link>
-      <p>Landlord:{review.landlord} Rating:{review.rating} <img className='starImages' src={`https://cdn2.hubspot.net/hubfs/6816024/Assets/${review.rating}Stars.png`}></img></p>
+      <Card border='light' style={{ width: '70rem' }}>
+        <Card.Header><Link to={`/reviews/${review.id}`}>{review.property} <br></br></Link></Card.Header>
+        <Card.Text><p>Landlord:{review.landlord} Rating:{review.rating} <img className='starImages' src={`https://cdn2.hubspot.net/hubfs/6816024/Assets/${review.rating}Stars.png`}></img></p>
+        </Card.Text>
+      </Card> <br></br>
     </div>
   ))
 
