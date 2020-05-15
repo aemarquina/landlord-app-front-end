@@ -53,14 +53,14 @@ DELETE | /reviews/:id
 ## Images
 
 #### App Screenshot:
-![screenshot](https://imgur.com/a/siIDBQf)
+![screenshot](https://i.imgur.com/XPuA4ey.png)
 
 ---
 
 #### Wireframe:
-![wireframe](https://imgur.com/a/EXFtUcz)
+![wireframe](https://i.imgur.com/VSp3ilx.jpg)
 
 ---
 
 #### ERD:
-![ERD](https://imgur.com/a/xIefgXK)
+![ERD](https://i.imgur.com/10OeFlY.jpg)
