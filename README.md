@@ -16,7 +16,7 @@ This application is meant to give renters a little power back. You can view revi
 
 ## Planning Story
 
-I first started mapping out my wire frames and erds. Once I had a clear grasp on that, I started writing psuedo code 
+I first started mapping out my wire frames and erds. Once I had a clear grasp on that, I started writing psuedo code. Once I felt comfortable with my plan I started on the back end. Thankfully since I had already had familiarity with Ruby on Rails, I felt a bit more was able to complete this quickly. Once I successfully implemented my backend and was able to complete all crud actions, I moved to the front end. This was the first time that I had used React and it was quite the experience. However, I did find that because I was meticulous with my planning and broke down the steps, I felt a lot more prepared to tackle the errors that I encountered(which were many). 
 
 ### User Stories
 
@@ -53,14 +53,14 @@ DELETE | /reviews/:id
 ## Images
 
 #### App Screenshot:
-![screenshot](https://media.idownloadblog.com/wp-content/uploads/2017/07/Select-Instagram-story-to-save-to-iPhone.jpeg)
+![screenshot](https://imgur.com/a/siIDBQf)
 
 ---
 
 #### Wireframe:
-![wireframe](https://drive.google.com/file/d/1MomQvfIpfLK7XB9oor8YCQQJX1QBMCoh/view?usp=sharing)
+![wireframe](https://imgur.com/a/EXFtUcz)
 
 ---
 
 #### ERD:
-![ERD](https://drive.google.com/file/d/1kJ8qDf69_aHZvuBxDKm_t7V9mjgwe_wx/view?usp=sharing)
+![ERD](https://imgur.com/a/xIefgXK)
