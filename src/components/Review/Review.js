@@ -4,7 +4,10 @@ import axios from 'axios'
 
 import apiUrl from '../../apiConfig'
 import Layout from '../../shared/Layout'
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 
+import './Review.scss'
 const Review = (props) => {
   const [review, setReview] = useState(null)
   const [deleted, setDeleted] = useState(false)
@@ -60,12 +63,18 @@ const Review = (props) => {
 
   const editDeleteJsx = (
     <Layout>
-      <h4>{review.property}</h4>
-      <h5>Landlord: {review.landlord}</h5>
-      <h5>Rating: {review.rating}</h5>
-      <h6>Move In: {review.movein}</h6> <h6>Move Out: {review.moveout}</h6>
-      <p>Description: {review.description}</p>
-      <Link to="/view-reviews">Back to reviews</Link>
+      <Card>
+        <Card.Header>{review.property}</Card.Header>
+        <Card.Body>
+          <Card.Title>Landlord: {review.landlord}</Card.Title>
+          <img className='starImages' src={`https://cdn2.hubspot.net/hubfs/6816024/Assets/${review.rating}Stars.png`}></img>
+          <h6>Move In: {review.movein}</h6> <h6>Move Out: {review.moveout}</h6>
+          <Card.Text>Description: {review.description}</Card.Text>
+          <Link to="/view-reviews">
+            <Button variant="secondary">Back to Reviews</Button>
+          </Link>
+        </Card.Body>
+      </Card>
     </Layout>
   )
 
@@ -79,16 +88,22 @@ const Review = (props) => {
 
   return (
     <Layout>
-      <h4>{review.property}</h4>
-      <h5>Landlord: {review.landlord}</h5>
-      <h5>Rating: {review.rating}</h5>
-      <h6>Move In: {review.movein}</h6> <h6>Move Out: {review.moveout}</h6>
-      <p>Description: {review.description}</p>
-      <button onClick={destroy}>Delete Book</button>
-      <Link to={`/reviews/${props.match.params.id}/edit`}>
-        <button>Edit</button>
-      </Link>
-      <Link to="/view-reviews">Back to reviews</Link>
+      <Card>
+        <Card.Header>{review.property}</Card.Header>
+        <Card.Body>
+          <Card.Title>Landlord: {review.landlord}</Card.Title>
+          <img className='starImages' src={`https://cdn2.hubspot.net/hubfs/6816024/Assets/${review.rating}Stars.png`}></img>
+          <h6>Move In: {review.movein}</h6> <h6>Move Out: {review.moveout}</h6>
+          <Card.Text>Description: {review.description}</Card.Text>
+          <Button className='destroyButton' variant="danger" onClick={destroy}>Delete Book</Button>
+          <Link to={`/reviews/${props.match.params.id}/edit`}>
+            <Button className='backToReviewButton' variant="primary">Edit</Button>
+          </Link>
+          <Link to="/view-reviews">
+            <Button variant="secondary">Back to Reviews</Button>
+          </Link>
+        </Card.Body>
+      </Card> <br></br>
     </Layout>
   )
 }
