@@ -74,9 +74,9 @@ const Review = (props) => {
           <Link to="/view-reviews">
             <Button variant="secondary">Back to Reviews</Button>
           </Link>
-          <GoogleApiWrapper
+          {/* <GoogleApiWrapper
             property = {review.property}
-          />
+          /> */}
         </Card.Body>
       </Card>
     </Layout>
