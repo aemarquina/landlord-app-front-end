@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
-import GoogleApiWrapper from '../GoogleMap'
+// import GoogleApiWrapper from '../GoogleMap'
 
 import apiUrl from '../../apiConfig'
 import Layout from '../../shared/Layout'
@@ -108,9 +108,9 @@ const Review = (props) => {
               <Button variant="secondary">Back to Reviews</Button>
             </Link>
             <div>
-              <GoogleApiWrapper
+              {/* <GoogleApiWrapper
                 address = {review.property}
-              />
+              /> */}
             </div>
           </Card.Body>
         </Card> <br></br>
