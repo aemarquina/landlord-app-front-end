@@ -1,6 +1,6 @@
 {
   "name": "react-auth-template",
-  "homepage": "ttps://aemarquina.github.io/landlord-app-client/",
+  "homepage": "https://aemarquina.github.io/landlord-app-client/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
