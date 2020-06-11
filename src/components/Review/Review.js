@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
-// import GoogleApiWrapper from '../GoogleMap'
 
 import apiUrl from '../../apiConfig'
 import Layout from '../../shared/Layout'
@@ -64,21 +63,20 @@ const Review = (props) => {
 
   const editDeleteJsx = (
     <Layout>
-      <Card>
-        <Card.Header>{review.property}</Card.Header>
-        <Card.Body>
-          <Card.Title>Landlord: {review.landlord}</Card.Title>
-          <img className='starImages' src={`https://cdn2.hubspot.net/hubfs/6816024/Assets/${review.rating}Stars.png`}></img>
-          <h6>Move In: {review.movein}</h6> <h6>Move Out: {review.moveout}</h6>
-          <Card.Text>Description: {review.description}</Card.Text>
-          <Link to="/view-reviews">
-            <Button variant="secondary">Back to Reviews</Button>
-          </Link>
-          {/* <GoogleApiWrapper
-            property = {review.property}
-          /> */}
-        </Card.Body>
-      </Card>
+      <div>
+        <Card>
+          <Card.Header>{review.property}</Card.Header>
+          <Card.Body>
+            <Card.Title>Landlord: {review.landlord}</Card.Title>
+            <img className='starImages' src={`https://cdn2.hubspot.net/hubfs/6816024/Assets/${review.rating}Stars.png`}></img>
+            <h6>Move In: {review.movein}</h6> <h6>Move Out: {review.moveout}</h6>
+            <Card.Text>Description: {review.description}</Card.Text>
+            <Link to="/view-reviews">
+              <Button variant="secondary">Back to Reviews</Button>
+            </Link>
+          </Card.Body>
+        </Card>
+      </div>
     </Layout>
   )
 
@@ -107,11 +105,6 @@ const Review = (props) => {
             <Link to="/view-reviews">
               <Button variant="secondary">Back to Reviews</Button>
             </Link>
-            <div>
-              {/* <GoogleApiWrapper
-                address = {review.property}
-              /> */}
-            </div>
           </Card.Body>
         </Card> <br></br>
       </div>

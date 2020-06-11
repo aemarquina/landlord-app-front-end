@@ -12,6 +12,8 @@ import ReviewCreate from '../ReviewCreate/ReviewCreate'
 import Reviews from '../Reviews/Reviews'
 import Review from '../Review/Review'
 import ReviewEdit from '../ReviewEdit/ReviewEdit'
+import Carousel from 'react-bootstrap/Carousel'
+// import SearchBar from '../SearchBar/SearchBar'
 // import UnauthReview from '../UnauthReview/UnauthReview'
 // import { router } from 'sw-toolbox';
 
@@ -48,6 +50,47 @@ class App extends Component {
           />
         ))}
         <main className="container">
+          <Route exact path='/' render={() => (
+            <div>
+              <Carousel>
+                <Carousel.Item>
+                  <img
+                    className="carousel-images"
+                    src="https://www.picpedia.org/keyboard/images/landlords.jpg"
+                    alt="First slide"
+                  />
+                  <Carousel.Caption>
+                    <h3>First slide label</h3>
+                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                  </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img
+                    className="carousel-images"
+                    src="https://live.staticflickr.com/52/180653440_ea048df1f9_b.jpg"
+                    alt="Third slide"
+                  />
+
+                  <Carousel.Caption>
+                    <h3>Second slide label</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img
+                    className="carousel-images"
+                    src="holder.js/800x400?text=Third slide&bg=20232a"
+                    alt="Third slide"
+                  />
+
+                  <Carousel.Caption>
+                    <h3>Third slide label</h3>
+                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                  </Carousel.Caption>
+                </Carousel.Item>
+              </Carousel>
+            </div>
+          )} />
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />

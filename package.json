@@ -21,6 +21,8 @@
     "react-datepicker": "^2.15.0",
     "react-dom": "^16.4.2",
     "react-geocode": "^0.2.1",
+    "react-native-elements": "^2.0.2",
+    "react-native-vector-icons": "^6.6.0",
     "react-router-dom": "^4.3.1",
     "resolve": "1.6.0",
     "url-loader": "0.6.2"
