@@ -18,12 +18,14 @@ const ReviewForm = ({ review, handleSubmit, handleChange, cancelPath }) => (
       </Form.Group>
       <Form.Group controlId="formHorizontal">
         <Form.Label>Rating</Form.Label>
-        <Form.Control
-          placeholder="Value of 1-5"
-          value={review.rating}
-          name="rating"
-          onChange={handleChange}
-        />
+        <Form.Control as="select" name="rating" onChange={handleChange} type='number' value={review.rating}>
+          <option>0</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </Form.Control>
       </Form.Group>
 
       <Form.Group controlId="formHorizontal">
