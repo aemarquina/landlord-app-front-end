@@ -24,7 +24,7 @@ const Reviews = (prop) => {
   const reviewsJsx = reviews.map(review => (
     <div className='reviewBox' key={review.id}>
       <Card border='light' style={{ width: '70rem' }}>
-        <Card.Header className='propertyLink'><Link to={`/reviews/${review.id}`}>{review.property} <br></br></Link></Card.Header>
+        <Card.Header bg='secondary' variant='secondary' className='propertyLink'><Link to={`/reviews/${review.id}`}>{review.property} <br></br></Link></Card.Header>
         <Card.Title> <h6>Landlord:{review.landlord} <img className='starImages' src={`https://cdn2.hubspot.net/hubfs/6816024/Assets/${review.rating}Stars.png`}></img></h6>
         </Card.Title>
       </Card> <br></br>
@@ -33,6 +33,7 @@ const Reviews = (prop) => {
 
   return (
     <Layout>
+      <h1>Landlord Reviews</h1>
       {reviewsJsx}
     </Layout>
   )

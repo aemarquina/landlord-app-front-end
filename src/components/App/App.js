@@ -12,6 +12,11 @@ import ReviewCreate from '../ReviewCreate/ReviewCreate'
 import Reviews from '../Reviews/Reviews'
 import Review from '../Review/Review'
 import ReviewEdit from '../ReviewEdit/ReviewEdit'
+import CarouselPage from '../Carousel/Carousel'
+// import Carousel from 'react-bootstrap/Carousel'
+// import Form from 'react-bootstrap/Form'
+// import Button from 'react-bootstrap/Button'
+// import Search from '../SearchBar/Search'
 // import UnauthReview from '../UnauthReview/UnauthReview'
 // import { router } from 'sw-toolbox';
 
@@ -48,6 +53,9 @@ class App extends Component {
           />
         ))}
         <main className="container">
+          <Route exact path='/' render={() => (
+            <CarouselPage user={user}></CarouselPage>
+          )} />
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />

@@ -1,9 +1,9 @@
-// .reviewBox {
-//   border-style: solid;
-//   border-width: 2px;
-//   padding: 5px;
-//   margin-bottom: 10px;
-// }
+.reviewBox {
+  // border-style: solid;
+  border-width: 2px;
+  padding: 10px 0px 0px 0px;
+  margin-bottom: 5px;
+}
 
 .starImages {
   max-width: 25%;
@@ -14,5 +14,23 @@
 }
 
 .propertyLink {
-  font-size: 25px;
+  font-size: 25px;  
+}
+
+.card {
+  margin: auto;
+}
+
+.card.header {
+  background-color: gray;
+}
+
+h6 {
+  padding: 5px 0px 0px 10px;
+}
+
+h1 {
+  margin: auto;
+  text-align: center;
+  padding: 10px 0px 10px 0px
 }

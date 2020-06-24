@@ -1,0 +1,51 @@
+
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+.carousel {
+  max-height: 75%;
+  max-width: 100%;
+}
+
+#searchForm {
+	position: relative;
+  top: 60%;
+  z-index: 30;
+}
+
+.form-group {
+  margin: auto;
+  padding-top: 60px;
+}
+.searchbarHeader, h1 {
+  text-align: center;
+  color:  #5a5a5a;
+  text-shadow: 2px 2px white;
+  font-size: 40px; 
+}
+
+.container {
+  max-width: 100%;
+  padding: 0px;
+  margin: 0px;
+  height: 75%;
+}
+
+img {
+  opacity: .7;
+}
+
+
+
+.caption {
+  margin: auto;
+  padding: 10px 0px 450px 0px;
+  color: #5a5a5a
+}
+
+h4 {
+  padding: 0px;
+  text-shadow: 2px 2px white;
+}
