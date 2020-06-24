@@ -19,7 +19,7 @@ const ReviewForm = ({ review, handleSubmit, handleChange, cancelPath }) => (
       <Form.Group controlId="formHorizontal">
         <Form.Label>Rating</Form.Label>
         <Form.Control as="select" name="rating" onChange={handleChange} type='number' value={review.rating}>
-          <option>0</option>
+          <option>-</option>
           <option>1</option>
           <option>2</option>
           <option>3</option>
@@ -68,7 +68,7 @@ const ReviewForm = ({ review, handleSubmit, handleChange, cancelPath }) => (
         />
       </Form.Group>
 
-      <Button variant='primary' type="submit">Submit</Button>
+      <Button className='submitButton' variant='primary' type="submit">Submit</Button>
       <Link to={cancelPath}>
         <Button className='cancelButton' variant='danger'>Cancel</Button>
       </Link>

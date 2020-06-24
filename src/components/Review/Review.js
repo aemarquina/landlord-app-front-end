@@ -8,6 +8,7 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 
 import './Review.scss'
+
 const Review = (props) => {
   const [review, setReview] = useState(null)
   const [deleted, setDeleted] = useState(false)

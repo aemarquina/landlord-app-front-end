@@ -4,9 +4,14 @@
   margin: auto;
 }
 
-.cancelButton {
-  margin: 0px 0px 0px 10px;
+.cancelButton, .submitButton  {
+  margin: 10px 0px 0px 10px;
 }
+
+.form-group {
+  padding: 10px !important;
+}
+
 
 h1 {
   margin: auto;

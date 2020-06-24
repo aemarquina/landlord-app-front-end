@@ -49,10 +49,10 @@ class SignIn extends Component {
 
     return (
       <div className="row">
-        <div className="col-sm-10 col-md-8 mx-auto mt-5">
+        <div className=" col-sm-10 col-md-8 mx-auto mt-5">
           <h3>Sign In</h3>
           <Form onSubmit={this.onSignIn}>
-            <Form.Group controlId="email">
+            <Form.Group className='sign-in' controlId="email">
               <Form.Label>Email address</Form.Label>
               <Form.Control
                 required
@@ -63,7 +63,7 @@ class SignIn extends Component {
                 onChange={this.handleChange}
               />
             </Form.Group>
-            <Form.Group controlId="password">
+            <Form.Group className='sign-in' controlId="password">
               <Form.Label>Password</Form.Label>
               <Form.Control
                 required
